@@ -2,6 +2,7 @@ package com.landform.landscape;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class Feature {
     private String type;
@@ -31,5 +32,28 @@ public class Feature {
 
     public Map<String, Object> getProperties() {
         return properties;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Feature feature = (Feature) o;
+        return Objects.equals(type, feature.type) &&
+                Objects.equals(properties, feature.properties);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(type, properties);
+    }
+
+    @Override
+    public String toString() {
+        return "Feature{" +
+                "type='" + type + '\'' +
+                ", properties=" + properties +
+                '}';
     }
 }

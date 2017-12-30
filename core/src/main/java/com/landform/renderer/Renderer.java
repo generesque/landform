@@ -10,5 +10,5 @@ public interface Renderer {
     Collection<String> getSupportedPathTypes();
     Collection<String> getSupportedPointOfInterestTypes();
 
-    RenderedImage render(Landscape landscape);
+    RenderedImage render(Landscape landscape, int width, int height);
 }

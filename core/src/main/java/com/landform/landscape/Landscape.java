@@ -1,13 +1,13 @@
 package com.landform.landscape;
 
-import java.util.Collection;
+import java.util.Set;
 
 public interface Landscape {
 
-    double getHeight(double x, double y);
-    double getWaterDepth(double x, double y);
+    double getHeight(Point point);
+    double getWaterDepth(Point point);
 
-    Collection<Region> getRegions();
-    Collection<Path> getPaths();
-    Collection<PointOfInterest> getPointsOfInterest();
+    Set<Region> getRegions();
+    Set<Path> getPaths();
+    Set<PointOfInterest> getPointsOfInterest();
 }

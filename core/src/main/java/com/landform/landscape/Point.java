@@ -9,20 +9,24 @@ final public class Point {
     final private double x;
     final private double y;
 
-    public Point()
-    {
+    public Point() {
         x = 0;
         y = 0;
     }
 
-    public Point(double x, double y)
-    {
+    public Point(double x, double y) {
+        if (x < 0 || x > 1.0) {
+            throw new IllegalArgumentException(String.format("Invalid X coordinate: %d", x));
+        }
+        if (y < 0 || y > 1.0) {
+            throw new IllegalArgumentException(String.format("Invalid Y coordinate: %d", y));
+        }
+
         this.x = x;
         this.y = y;
     }
 
-    public Point(Point other)
-    {
+    public Point(Point other) {
         this.x = other.x;
         this.y = other.y;
     }
